@@ -33,3 +33,29 @@ var questions=[{
     answer:"less peope follow dharma"
   }
   ];
+
+function quiz(question,answer)
+{
+  var userAnswer=readlineSync.question(question);
+  if(userAnswer.toLowerCase()===answer.toLowerCase())
+  {
+    console.log("you're right!");
+    score=score+1;
+  
+  }
+  else{
+    console.log("you're wrong! ");
+    console.log("correct ans is: "+answer);
+    score=score-1
+
+  }
+  console.log("-----------------");
+}
+
+  for(var i=0;i<questions.length;i++)
+  {
+    var currentQue=questions[i];
+    quiz(currentQue.question,currentQue.answer)
+  }
+
+console.log( "your score is :",+score)
